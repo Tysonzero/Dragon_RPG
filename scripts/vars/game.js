@@ -19,7 +19,11 @@ var game = {
     this.ctx = this.canvas.getContext('2d');
     
     //calls run() every 1/60th of a second
-    this.timer = setInterval(function(){game.run()}, 16 + 2/3);
+    this.timer = setInterval(
+      function() {
+        game.run();
+      }, 16 + 2/3
+    );
   },
   
   //run every 1/60th of a second
@@ -37,4 +41,4 @@ var game = {
   draw:function() {
   
   },
-}
+};
