@@ -18,11 +18,15 @@ var game = {
     //create context to allow drawing onto the canvas
     this.ctx = this.canvas.getContext('2d');
     
+    //allows keyboard input
+    keyBoardInput.initialize();
+
     //calls run() every 1/60th of a second
     this.timer = setInterval(
       function() {
         game.run();
-      }, 16 + 2/3
+      },
+      16 + 2/3
     );
   },
   
