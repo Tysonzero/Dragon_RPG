@@ -38,11 +38,11 @@ var game = {
   
   //variable manipulation
   update:function() {
-  
+    dragon.update();
   },
   
   //drawing to screen
   draw:function() {
-  
+    dragon.draw();
   },
 };
