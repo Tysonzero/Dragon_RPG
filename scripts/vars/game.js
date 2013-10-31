@@ -38,11 +38,16 @@ var game = {
   
   //variable manipulation
   update:function() {
+    //update objects
     dragon.update();
   },
   
   //drawing to screen
   draw:function() {
+    //clear screen
+    this.ctx.clearRect(0, 0, game.width, game.height);
+    
+    //draw objects to screen
     dragon.draw();
   },
 };
