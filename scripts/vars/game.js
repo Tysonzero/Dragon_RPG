@@ -7,6 +7,7 @@ var game = {
   width:1000,
   height:700,
   
+  //initial set up
   setup:function() {
     //get canvas created in html so it can be accessed
     this.canvas = document.getElementById('game_canvas');

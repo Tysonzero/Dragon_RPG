@@ -1,12 +1,12 @@
 var dragon = {
   //dragon position
-  pos = {
+  pos:{
     x:0,
     y:0,
   },
   
   //dragon velocity
-  speed = {
+  speed:{
     x:0,
     y:0,
   },
