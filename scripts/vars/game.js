@@ -22,6 +22,9 @@ var game = {
     //allows keyboard input
     keyBoardInput.initialize();
 
+    //set up objects
+    dragon.setup();
+    
     //calls run() every 1/60th of a second
     this.timer = setInterval(
       function() {
