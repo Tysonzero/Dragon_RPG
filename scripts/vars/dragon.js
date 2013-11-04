@@ -27,7 +27,18 @@ var dragon = {
   
   //variable manipulation
   update:function() {
-  
+    //adjust dragon speed along X axis
+    if (keyBoardInput.key[65] && !keyBoardInput.key[68]) {
+      this.speed.x = -2;
+    }
+    else if (keyBoardInput.key[68] && !keyBoardInput.key[65]) {
+      this.speed.x = 2;
+    }
+    else {
+      this.speed.x = 0;
+    }
+    
+    this.pos.x += this.speed.x;
   },
   
   //drawing to screen
