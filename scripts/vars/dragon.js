@@ -11,6 +11,12 @@ var dragon = {
     y:0,
   },
   
+  //dragon size
+  size:{
+    x:100,
+    y:60,
+  },
+  
   //dragon image
   image:new Image(),
   
@@ -26,6 +32,6 @@ var dragon = {
   
   //drawing to screen
   draw:function() {
-    game.ctx.drawImage(this.image, 0, 0, 100, 60, 0, 0, 100, 60);
+    game.ctx.drawImage(this.image, 0, 0, this.size.x, this.size.y, 0, 0, 100, 60);
   },
 }
