@@ -32,6 +32,6 @@ var dragon = {
   
   //drawing to screen
   draw:function() {
-    game.ctx.drawImage(this.image, 0, 0, 100, 60, 0, 0, this.size.x, this.size.y);
+    game.ctx.drawImage(this.image, 0, 0, 100, 60, game.width/2 - this.size.x/2, game.height/2 - this.size.y/2, this.size.x, this.size.y);
   },
 }
