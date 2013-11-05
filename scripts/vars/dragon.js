@@ -27,8 +27,8 @@ var dragon = {
   
   //variable manipulation
   update:function() {
-    //adjust drag speed along X axis
-    this.move();
+    //calls run function
+    this.run();
     
     //move dragon by speed
     this.pos.x += this.speed.x;
@@ -39,8 +39,8 @@ var dragon = {
     game.ctx.drawImage(this.image, 0, 0, 100, 60, game.width/2 - this.size.x/2, game.height/2 - this.size.y/2, this.size.x, this.size.y);
   },
   
-  move:function() {
-    //adjust dragon speed along X axis
+  run:function() {
+    //run left and right
     if (keyBoardInput.key[65] && !keyBoardInput.key[68]) {
       this.speed.x = -2;
     }
