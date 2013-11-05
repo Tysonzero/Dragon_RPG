@@ -38,6 +38,7 @@ var dragon = {
       this.speed.x = 0;
     }
     
+    //move dragon by speed
     this.pos.x += this.speed.x;
   },
   
