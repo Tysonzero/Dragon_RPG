@@ -27,6 +27,19 @@ var dragon = {
   
   //variable manipulation
   update:function() {
+    //adjust drag speed along X axis
+    move();
+    
+    //move dragon by speed
+    this.pos.x += this.speed.x;
+  },
+  
+  //drawing to screen
+  draw:function() {
+    game.ctx.drawImage(this.image, 0, 0, 100, 60, game.width/2 - this.size.x/2, game.height/2 - this.size.y/2, this.size.x, this.size.y);
+  },
+  
+  move:function() {
     //adjust dragon speed along X axis
     if (keyBoardInput.key[65] && !keyBoardInput.key[68]) {
       this.speed.x = -2;
@@ -37,13 +50,5 @@ var dragon = {
     else {
       this.speed.x = 0;
     }
-    
-    //move dragon by speed
-    this.pos.x += this.speed.x;
-  },
-  
-  //drawing to screen
-  draw:function() {
-    game.ctx.drawImage(this.image, 0, 0, 100, 60, game.width/2 - this.size.x/2, game.height/2 - this.size.y/2, this.size.x, this.size.y);
   },
 }
