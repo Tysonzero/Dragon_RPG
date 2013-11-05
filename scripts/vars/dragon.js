@@ -28,7 +28,7 @@ var dragon = {
   //variable manipulation
   update:function() {
     //adjust drag speed along X axis
-    move();
+    this.move();
     
     //move dragon by speed
     this.pos.x += this.speed.x;
