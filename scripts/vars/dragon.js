@@ -58,6 +58,8 @@ var dragon = {
   
   //jump upwards
   jump:function() {
-  
+    if (keyBoardInput.key[87] && !keyBoardInput.lastKey[87]) {
+      this.speed.y = -5;
+    }
   },
 }
