@@ -1,6 +1,7 @@
 require(
   //imports required js files
   [
+    "vars/camera",
     "vars/dragon",
     "vars/game",
     "vars/keyBoardInput",
