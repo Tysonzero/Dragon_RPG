@@ -58,6 +58,7 @@ var game = {
   
   //variable manipulation at end of frame
   postFrame:function() {
-   
+    //call postFrame of other objects
+    keyBoardInput.postFrame();
   },
 };
