@@ -33,6 +33,9 @@ var dragon = {
     //calls jump function
     this.jump();
     
+    //calls gravity function
+    this.gravity();
+    
     //move dragon by speed
     this.pos.x += this.speed.x;
     this.pos.y += this.speed.y;
@@ -61,5 +64,10 @@ var dragon = {
     if (keyBoardInput.key[87] && !keyBoardInput.lastKey[87]) {
       this.speed.y = -5;
     }
+  },
+  
+  //fall downwards
+  gravity:function() {
+    this.speed.y += 0.1;
   },
 }
