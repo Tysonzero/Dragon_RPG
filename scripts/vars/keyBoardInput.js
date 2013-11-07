@@ -1,6 +1,9 @@
 var keyBoardInput = {
   //array storing what keys are held down
   key:[],
+  
+  //array storing what keys were previously held down
+  lastKey:[],
 
   //creates keyboard listener
   initialize:function() {
@@ -17,5 +20,10 @@ var keyBoardInput = {
     window.onkeyup = function(e) {
       keyBoardInput.key[e.keyCode] = false;
     };
+  },
+  
+  //variable manipulation
+  update:function() {
+    this.lastKey = this.key.slice();
   },
 };
