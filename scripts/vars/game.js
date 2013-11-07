@@ -44,6 +44,7 @@ var game = {
   update:function() {
     //update objects
     dragon.update();
+    keyBoardInput.update();
   },
   
   //drawing to screen
@@ -51,7 +52,7 @@ var game = {
     //clear screen
     this.ctx.clearRect(0, 0, game.width, game.height);
     
-    //draw objects to screen
+    //draw objects
     dragon.draw();
   },
 };
