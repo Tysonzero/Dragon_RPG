@@ -38,6 +38,7 @@ var game = {
   run:function() {
     this.update();
     this.draw();
+    this.postFrame();
   },
   
   //variable manipulation
@@ -53,5 +54,10 @@ var game = {
     
     //draw objects to screen
     dragon.draw();
+  },
+  
+  //variable manipulation at end of frame
+  postFrame:function() {
+   
   },
 };
