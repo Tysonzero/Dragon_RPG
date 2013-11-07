@@ -70,4 +70,4 @@ var dragon = {
   gravity:function() {
     this.speed.y += 0.1;
   },
-}
+};
