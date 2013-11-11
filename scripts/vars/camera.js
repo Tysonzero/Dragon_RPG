@@ -1,4 +1,7 @@
 var camera = {
+  //camera view
+  view:"dragon",
+
   //camera position
   pos:{
     x:0,
