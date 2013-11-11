@@ -43,7 +43,9 @@ var dragon = {
   
   //drawing to screen
   draw:function() {
-    game.ctx.drawImage(this.image, 0, 0, 100, 60, game.width/2 - this.size.x/2, game.height/2 - this.size.y/2, this.size.x, this.size.y);
+    pos = camera.getPos(this.pos);
+    size = camera.getSize(this.size);
+    game.ctx.drawImage(this.image, 0, 0, 100, 60, pos.x - size.x/2, pos.y - size.y/2, size.x, size.y);
   },
   
   //run left and right
