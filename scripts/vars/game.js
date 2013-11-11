@@ -52,7 +52,7 @@ var game = {
   //drawing to screen
   draw:function() {
     //clear screen
-    this.ctx.clearRect(0, 0, game.width, game.height);
+    this.ctx.clearRect(0, 0, game.size.x, game.size.y);
     
     //draw objects
     dragon.draw();
