@@ -6,6 +6,7 @@ require(
     "vars/game",
     "vars/keyBoardInput",
   ],
+  
   //runs once files are imported
   function() {
     game.setup();

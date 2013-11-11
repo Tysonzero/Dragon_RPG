@@ -10,6 +10,7 @@ var keyBoardInput = {
     this._bind_keys();
   },
 
+  //sets up keyboard listener
   _bind_keys:function() {
     //called whenever a key is pressed
     window.onkeydown = function(e) {
