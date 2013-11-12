@@ -47,6 +47,7 @@ var game = {
     //update objects
     dragon.update();
     keyBoardInput.update();
+    camera.update();
   },
   
   //drawing to screen
