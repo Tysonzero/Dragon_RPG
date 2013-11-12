@@ -14,6 +14,16 @@ var camera = {
     y:700,
   },
   
+  //variable manipulation
+  update:function() {
+    switch(this.view) {
+      case "dragon":
+        this.pos.x = dragon.pos.x;
+        this.pos.y = dragon.pos.y;
+        break;
+    }
+  },
+  
   //convert true position to position on screen
   getPos:function(pos) {
     return {x:((pos.x - this.pos.x) * game.size.x / this.size.x) + game.size.x/2, y:((pos.y - this.pos.y) * game.size.y / this.size.y) + game.size.y/2};
