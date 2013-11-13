@@ -1,4 +1,10 @@
 var dragon = {
+  //dragon direction
+  direction:{
+    x:1,
+    y:0,
+  },
+
   //dragon position
   pos:{
     x:0,
