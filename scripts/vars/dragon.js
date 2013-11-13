@@ -51,7 +51,7 @@ var dragon = {
   draw:function() {
     pos = camera.getPos(this.pos);
     size = camera.getSize(this.size);
-    game.ctx.drawImage(this.image, 0, 0, 100, 60, pos.x - size.x/2, pos.y - size.y/2, size.x, size.y);
+    game.ctx.drawImage(this.image, 50 + (50*this.direction.x), 0, 100, 60, pos.x - size.x/2, pos.y - size.y/2, size.x, size.y);
   },
   
   //run left and right
