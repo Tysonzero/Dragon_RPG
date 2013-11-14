@@ -5,6 +5,7 @@ require(
     "vars/dragon",
     "vars/game",
     "vars/keyBoardInput",
+    "vars/platform",
   ],
   
   //runs once files are imported
