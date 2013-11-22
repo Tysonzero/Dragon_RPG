@@ -45,6 +45,9 @@ var dragon = {
     //move dragon by speed
     this.pos.x += this.speed.x;
     this.pos.y += this.speed.y;
+    
+    //check for collision
+    platform.collide(this.pos, this.size);
   },
   
   //drawing to screen
