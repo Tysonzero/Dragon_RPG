@@ -57,5 +57,6 @@ var game = {
     
     //draw objects
     dragon.draw();
+    platform.draw();
   },
 };
