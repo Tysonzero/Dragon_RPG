@@ -21,7 +21,7 @@ var platform = {
   },
   
   //creates a new platform
-  create:function(pos, size) {
-    this.instances[this.instances.length] = new this.Platform(pos, size);
+  create:function(posX, posY, sizeX, sizeY) {
+    this.instances[this.instances.length] = new this.Platform({x:posX, y:posY}, {x:sizeX, y:sizeY});
   },
 };
