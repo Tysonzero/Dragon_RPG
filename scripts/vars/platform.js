@@ -41,6 +41,17 @@ var platform = {
         if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
           alert("RIGHT SIDE COLLISION");
         }
+        if (pos.x - size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2 && pos.x - size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2) {
+          alert("LEFT SIDE COLLISION");
+        }
+      }
+      if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2) {
+        if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
+          alert("BOTTOM SIDE COLLISION");
+        }
+        if (pos.y - size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2 && pos.y - size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2) {
+          alert("TOP SIDE COLLISION");
+        }
       }
     }
   }
