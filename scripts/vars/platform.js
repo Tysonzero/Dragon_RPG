@@ -72,5 +72,9 @@ var platform = {
       pos.y -= collision.bottom;
       speed.y = 0;
     }
-  }
+  },
+  
+  standing:function(pos, size) {
+  
+  },
 };
