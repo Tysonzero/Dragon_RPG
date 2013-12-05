@@ -45,7 +45,7 @@ var platform = {
           collision.left = (this.instances[i].pos.x + this.instances[i].size.x/2) - (pos.x - size.x/2);
         }
       }
-      if (pos.x + size.x/2 > this.instances[i].poas.x - this.instances[i].size.x/2 + 10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - 10) {
+      if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + 10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - 10) {
         if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
           collision.bottom = (pos.y + size.y/2) - (this.instances[i].pos.y - this.instances[i].size.y/2);
         }
@@ -74,7 +74,14 @@ var platform = {
     }
   },
   
+  //check if object is standing on a platform
   standing:function(pos, size) {
-  
+    for (i = 0; i < this.instances.length; i++) {
+      if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + 10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - 10) {
+        if (pos.y + size.y/2 == this.instances[i].pos.y - this.instances[i].size.y/2) {
+          return true;
+        }
+      }
+    }
   },
 };
