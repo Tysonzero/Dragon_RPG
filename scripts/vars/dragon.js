@@ -37,7 +37,9 @@ var dragon = {
     this.run();
     
     //calls jump function
-    this.jump();
+    if (platform.standing(this.pos, this.size)) {
+      this.jump();
+    }
     
     //calls gravity function
     this.gravity();
