@@ -46,6 +46,7 @@ var game = {
   update:function() {
     //update objects
     dragon.update();
+    projectile.update();
     keyBoardInput.update();
     camera.update();
   },
