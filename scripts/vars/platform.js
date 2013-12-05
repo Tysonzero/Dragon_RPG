@@ -16,7 +16,6 @@ var platform = {
   
   //drawing to screen
   draw:function() {
-    //draw all platforms
     for (i = 0; i < this.instances.length; i++) {
       pos = camera.getPos(this.instances[i].pos);
       size = camera.getSize(this.instances[i].size);

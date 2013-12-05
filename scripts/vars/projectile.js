@@ -15,9 +15,17 @@ var projectile = {
     this.instances[this.instances.length] = new this.Projectile({x:posX, y:posY}, {x:sizeX, y:sizeY}, {x:speedX, y:speedY});
   },
   
+  //variable manipulation
+  update:function() {
+    for (i = 0; i < this.instances.length; i++) {
+      //move objects by speed
+      this.instances[i].pos.x += this.instances[i].speed.x;
+      this.instances[i].pos.y += this.instances[i].speed.y;
+    }
+  },
+  
   //drawing to screen
   draw:function() {
-    //draw all projectiles
     for (i = 0; i < this.instances.length; i++) {
       pos = camera.getPos(this.instances[i].pos);
       size = camera.getSize(this.instances[i].size);
