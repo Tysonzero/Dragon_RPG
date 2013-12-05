@@ -8,5 +8,10 @@ var projectile = {
 		this.pos = pos;
 		this.size = size;
 		this.speed = speed;
-	}
+	},
+  
+  //creates a new projectile
+  create:function(posX, posY, sizeX, sizeY, speedX, speedY) {
+    this.instances[this.instances.length] = new this.Projectile({x:posX, y:posY}, {x:sizeX, y:sizeY}, {x:speedX, y:speedY});
+  },
 };
