@@ -33,7 +33,7 @@ var platform = {
       right:0,
       top:0,
       bottom:0,
-    }
+    };
   
     //check if object collides with any platform
     for (i = 0; i < this.instances.length; i++) {
