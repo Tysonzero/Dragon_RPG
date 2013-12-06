@@ -23,6 +23,8 @@ var game = {
     
     //allows keyboard input
     keyBoardInput.initialize();
+    
+    mouseInput.initialize();
 
     //set up objects
     dragon.setup();
