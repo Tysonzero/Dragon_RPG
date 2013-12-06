@@ -5,6 +5,7 @@ require(
     "vars/dragon",
     "vars/game",
     "vars/keyBoardInput",
+    "vars/mouseInput",
     "vars/platform",
     "vars/projectile",
   ],
