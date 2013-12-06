@@ -44,6 +44,9 @@ var dragon = {
     //calls gravity function
     this.gravity();
     
+    //use abilities
+    this.ability();
+    
     //move dragon by speed
     this.pos.x += this.speed.x;
     this.pos.y += this.speed.y;
@@ -83,5 +86,9 @@ var dragon = {
   //fall downwards
   gravity:function() {
     this.speed.y += 0.1;
+  },
+  
+  ability:function() {
+  
   },
 };
