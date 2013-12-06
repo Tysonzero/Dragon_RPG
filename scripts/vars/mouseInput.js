@@ -33,9 +33,6 @@ var mouseInput = {
   //returns mouse position within canvas
   getMousePos:function(evt) {
     var rect = game.canvas.getBoundingClientRect();
-    return {
-      x: evt.clientX - rect.left,
-      y: evt.clientY - rect.top,
-    };
+    return camera.input({x: evt.clientX - rect.left, y: evt.clientY - rect.top}, {x: 0, y: 0}).pos;
   },
 };
