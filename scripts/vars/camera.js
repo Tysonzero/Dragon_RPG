@@ -37,4 +37,18 @@ var camera = {
       },
     };
   },
+  
+  //convert position on screen to true position
+  input:function(pos, size) {
+    return {
+      pos:{
+        x:((pos.x - game.size.x/2) * this.size.x / game.size.x) + this.pos.x,
+        y:((pos.y - game.size.y/2) * this.size.y / game.size.y) + this.pos.y,
+      },
+      size:{
+        x:size.x * this.size.x / game.size.x,
+        y:size.y * this.size.y / game.size.y,
+      },
+    };
+  },
 };
