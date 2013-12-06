@@ -27,10 +27,9 @@ var projectile = {
   //drawing to screen
   draw:function() {
     for (i = 0; i < this.instances.length; i++) {
-      pos = camera.getPos(this.instances[i].pos);
-      size = camera.getSize(this.instances[i].size);
+      output = camera.output(this.instances[i].pos, this.instances[i].size);
       game.ctx.fillStyle="#FF0000";
-      game.ctx.fillRect(pos.x - size.x/2, pos.y - size.y/2, size.x, size.y);
+      game.ctx.fillRect(output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
     }
   },
 };
