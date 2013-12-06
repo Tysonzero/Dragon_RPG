@@ -88,7 +88,16 @@ var dragon = {
     this.speed.y += 0.1;
   },
   
+  //use abilities
   ability:function() {
-  
+    //launch projectile if mouse is pressed
+    if (mouseInput.pressed) {
+      var offset = {
+        x:mouseInput.pos.x - this.pos.x - 50 * this.direction.x,
+        y:mouseInput.pos.y - this.pos.y + 5,
+      };
+      var distance = Math.pow(Math.pow(offset.x, 2) + Math.pow(offset.y, 2), 0.5);
+      projectile.create(this.pos.x + 50 * this.direction.x, this.pos.y - 5, 10, 10, 5 * offset.x / distance, 5 * offset.y / distance);
+    }
   },
 };
