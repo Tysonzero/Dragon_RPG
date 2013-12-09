@@ -10,6 +10,7 @@ var mouseInput = {
     return camera.input(this._pos, {x:0, y:0}).pos;
   },
 
+  //sets mouse position on screen
   set pos(pos) {
     this._pos = pos;
   },
