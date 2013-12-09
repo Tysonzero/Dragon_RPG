@@ -23,6 +23,9 @@ var dragon = {
     y:60,
   },
   
+  //dragon shape
+  shape:"rect",
+  
   //dragon image
   image:new Image(),
   
@@ -52,7 +55,7 @@ var dragon = {
     this.pos.y += this.speed.y;
     
     //check for collision
-    platform.collide(this.pos, this.size, this.speed);
+    platform.collide(this.pos, this.size, this.speed, this.shape);
   },
   
   //drawing to screen
