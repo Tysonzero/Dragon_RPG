@@ -3,16 +3,17 @@ var projectile = {
 	instances:[],
 
 	//Projectile prototype
-	Projectile:function(pos, size, speed) {
+	Projectile:function(pos, size, speed, shape) {
 		//objects with x and y attributes
 		this.pos = pos;
 		this.size = size;
 		this.speed = speed;
+    this.shape = shape;
 	},
   
   //creates a new projectile
-  create:function(posX, posY, sizeX, sizeY, speedX, speedY) {
-    this.instances[this.instances.length] = new this.Projectile({x:posX, y:posY}, {x:sizeX, y:sizeY}, {x:speedX, y:speedY});
+  create:function(posX, posY, sizeX, sizeY, speedX, speedY, shape) {
+    this.instances[this.instances.length] = new this.Projectile({x:posX, y:posY}, {x:sizeX, y:sizeY}, {x:speedX, y:speedY}, shape);
   },
   
   //variable manipulation
@@ -21,6 +22,9 @@ var projectile = {
       //move objects by speed
       this.instances[i].pos.x += this.instances[i].speed.x;
       this.instances[i].pos.y += this.instances[i].speed.y;
+      
+      //check for collision
+      platform.collide(this.instances[i].pos, this.instances[i].size, this.instances[i].speed, this.instances[i].shape);
     }
   },
   
