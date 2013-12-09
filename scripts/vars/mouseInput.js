@@ -1,10 +1,19 @@
 var mouseInput = {
-  //mouse position
-  pos:{
+  //mouse position on screen
+  _pos:{
     x:0,
     y:0,
   },
-  
+
+  //gets true mouse position
+  get pos() {
+    return camera.input(this._pos, {x:0, y:0}).pos;
+  },
+
+  set pos(pos) {
+    this._pos = pos;
+  },
+
   //whether mouse button is down
   pressed:false,
 
@@ -33,6 +42,6 @@ var mouseInput = {
   //returns mouse position within canvas
   getMousePos:function(evt) {
     var rect = game.canvas.getBoundingClientRect();
-    return camera.input({x: evt.clientX - rect.left, y: evt.clientY - rect.top}, {x: 0, y: 0}).pos;
+    return {x: evt.clientX - rect.left, y: evt.clientY - rect.top};
   },
 };
