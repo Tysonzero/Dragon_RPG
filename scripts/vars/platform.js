@@ -16,7 +16,7 @@ var platform = {
   
   //drawing to screen
   draw:function() {
-    for (i = 0; i < this.instances.length; i++) {
+    for (var i = 0; i < this.instances.length; i++) {
       output = camera.output(this.instances[i].pos, this.instances[i].size);
       game.ctx.fillStyle="#000000";
       game.ctx.fillRect(output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
@@ -36,7 +36,7 @@ var platform = {
         };
       
         //check if object collides with any platform
-        for (i = 0; i < this.instances.length; i++) {
+        for (var i = 0; i < this.instances.length; i++) {
           if (pos.y + size.y/2 > this.instances[i].pos.y - this.instances[i].size.y/2 + 10 && pos.y - size.y/2 < this.instances[i].pos.y + this.instances[i].size.y/2 - 10) {
             if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
               collision.right = (pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2);

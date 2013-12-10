@@ -18,7 +18,7 @@ var projectile = {
   
   //variable manipulation
   update:function() {
-    for (i = 0; i < this.instances.length; i++) {
+    for (var i = 0; i < this.instances.length; i++) {
       //move objects by speed
       this.instances[i].pos.x += this.instances[i].speed.x;
       this.instances[i].pos.y += this.instances[i].speed.y;
@@ -30,7 +30,7 @@ var projectile = {
   
   //drawing to screen
   draw:function() {
-    for (i = 0; i < this.instances.length; i++) {
+    for (var i = 0; i < this.instances.length; i++) {
       output = camera.output(this.instances[i].pos, this.instances[i].size);
       game.ctx.fillStyle="#FF0000";
       game.ctx.fillRect(output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
