@@ -24,7 +24,9 @@ var projectile = {
       this.instances[i].pos.y += this.instances[i].speed.y;
       
       //check for collision
-      platform.collide(this.instances[i].pos, this.instances[i].size, this.instances[i].speed, this.instances[i].shape);
+      if (platform.collide(this.instances[i].pos, this.instances[i].size, this.instances[i].speed, this.instances[i].shape)) {
+        this.instances.splice(i, 1);
+      }
     }
   },
   
