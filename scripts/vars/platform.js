@@ -34,10 +34,10 @@ var platform = {
       any:false,
     };
     
-    switch(shape) {
-      case "rect":
-        //check if object collides with any platform
-        for (var i = 0; i < this.instances.length; i++) {
+    //check if object collides with any platform
+    for (var i = 0; i < this.instances.length; i++) {
+      switch(shape) {
+        case "rect":
           if (pos.y + size.y/2 > this.instances[i].pos.y - this.instances[i].size.y/2 + size.y/10 && pos.y - size.y/2 < this.instances[i].pos.y + this.instances[i].size.y/2 - size.y/10) {
             if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
               collision.right = Math.max((pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2), collision.right);
@@ -58,26 +58,29 @@ var platform = {
               collision.any = true;
             }
           }
-        }
-        
-        //adjust position and speed of object
-        if (collision.left && !collision.right) {
-          pos.x += collision.left;
-          speed.x = 0;
-        }
-        else if (collision.right && !collision.left) {
-          pos.x -= collision.right;
-          speed.x = 0;
-        }
-        if (collision.top && !collision.bottom) {
-          pos.y += collision.top;
-          speed.y = 0;
-        }
-        else if (collision.bottom && !collision.top) {
-          pos.y -= collision.bottom;
-          speed.y = 0;
-        }
-        break;
+          break;
+        case "circle":
+          //INSERT CIRCLE COLLISION CODE HERE
+          break;
+      }
+    }
+
+    //adjust position and speed of object
+    if (collision.left && !collision.right) {
+      pos.x += collision.left;
+      speed.x = 0;
+    }
+    else if (collision.right && !collision.left) {
+      pos.x -= collision.right;
+      speed.x = 0;
+    }
+    if (collision.top && !collision.bottom) {
+      pos.y += collision.top;
+      speed.y = 0;
+    }
+    else if (collision.bottom && !collision.top) {
+      pos.y -= collision.bottom;
+      speed.y = 0;
     }
     
     return collision.any;
