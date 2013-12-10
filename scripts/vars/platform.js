@@ -38,7 +38,7 @@ var platform = {
       case "rect":
         //check if object collides with any platform
         for (var i = 0; i < this.instances.length; i++) {
-          if (pos.y + size.y/2 > this.instances[i].pos.y - this.instances[i].size.y/2 + 10 && pos.y - size.y/2 < this.instances[i].pos.y + this.instances[i].size.y/2 - 10) {
+          if (pos.y + size.y/2 > this.instances[i].pos.y - this.instances[i].size.y/2 + size.y/10 && pos.y - size.y/2 < this.instances[i].pos.y + this.instances[i].size.y/2 - size.y/10) {
             if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
               collision.right = (pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2);
               collision.any = true;
@@ -48,7 +48,7 @@ var platform = {
               collision.any = true;
             }
           }
-          if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + 10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - 10) {
+          if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + size.x/10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - size.x/10) {
             if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
               collision.bottom = (pos.y + size.y/2) - (this.instances[i].pos.y - this.instances[i].size.y/2);
               collision.any = true;
