@@ -25,32 +25,37 @@ var platform = {
   
   //adjust object if a collision occurs
   collide:function(pos, size, speed, shape) {
+    //object containing depth of object collision
+    var collision = {
+      left:0,
+      right:0,
+      top:0,
+      bottom:0,
+      any:false,
+    };
+    
     switch(shape) {
       case "rect":
-        //object containing depth of object collision
-        var collision = {
-          left:0,
-          right:0,
-          top:0,
-          bottom:0,
-        };
-      
         //check if object collides with any platform
         for (var i = 0; i < this.instances.length; i++) {
           if (pos.y + size.y/2 > this.instances[i].pos.y - this.instances[i].size.y/2 + 10 && pos.y - size.y/2 < this.instances[i].pos.y + this.instances[i].size.y/2 - 10) {
             if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
               collision.right = (pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2);
+              collision.any = true;
             }
             if (pos.x - size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2 && pos.x - size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2) {
               collision.left = (this.instances[i].pos.x + this.instances[i].size.x/2) - (pos.x - size.x/2);
+              collision.any = true;
             }
           }
           if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + 10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - 10) {
             if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
               collision.bottom = (pos.y + size.y/2) - (this.instances[i].pos.y - this.instances[i].size.y/2);
+              collision.any = true;
             }
             if (pos.y - size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2 && pos.y - size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2) {
               collision.top = (this.instances[i].pos.y + this.instances[i].size.y/2) - (pos.y - size.y/2);
+              collision.any = true;
             }
           }
         }
@@ -74,6 +79,8 @@ var platform = {
         }
         break;
     }
+    
+    return collision.any;
   },
   
   //check if object is standing on a platform
