@@ -2,6 +2,9 @@ var projectile = {
 	//array of Projectile objects
 	instances:[],
 
+  //projectile image
+  image:new Image(),
+  
 	//Projectile prototype
 	Projectile:function(pos, size, speed, shape) {
 		//objects with x and y attributes
@@ -14,6 +17,11 @@ var projectile = {
   //creates a new projectile
   create:function(posX, posY, sizeX, sizeY, speedX, speedY, shape) {
     this.instances[this.instances.length] = new this.Projectile({x:posX, y:posY}, {x:sizeX, y:sizeY}, {x:speedX, y:speedY}, shape);
+  },
+  
+  //initial set up
+  setup:function() {
+    this.image.src = "images/projectile.png";
   },
   
   //variable manipulation
@@ -34,8 +42,7 @@ var projectile = {
   draw:function() {
     for (var i = 0; i < this.instances.length; i++) {
       output = camera.output(this.instances[i].pos, this.instances[i].size);
-      game.ctx.fillStyle="#FF0000";
-      game.ctx.fillRect(output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
+      game.ctx.drawImage(this.image, 0, 60, 30, 30, output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
     }
   },
 };

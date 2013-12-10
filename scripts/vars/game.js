@@ -28,6 +28,7 @@ var game = {
 
     //set up objects
     dragon.setup();
+    projectile.setup();
     
     //calls run() every 1/60th of a second
     this.timer = setInterval(
