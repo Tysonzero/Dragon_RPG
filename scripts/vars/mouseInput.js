@@ -32,11 +32,13 @@ var mouseInput = {
   
   //called when mouse is clicked
   mouseDown:function(evt) {
+    mouseInput.pos = mouseInput.getMousePos(evt);
     mouseInput.pressed = true;
   },
   
   //called when mouse is released
   mouseUp:function(evt) {
+    mouseInput.pos = mouseInput.getMousePos(evt);
     mouseInput.pressed = false;
   },
   
