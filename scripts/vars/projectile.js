@@ -6,12 +6,12 @@ var projectile = {
   image:new Image(),
   
 	//Projectile prototype
-	Projectile:function(pos, size, speed, shape) {
+	Projectile:function(pos, size, speed, hitbox) {
 		//objects with x and y attributes
 		this.pos = pos;
 		this.size = size;
 		this.speed = speed;
-    this.shape = shape;
+    this.hitbox = hitbox;
 	},
   
   //creates a new projectile
@@ -32,7 +32,7 @@ var projectile = {
       this.instances[i].pos.y += this.instances[i].speed.y;
       
       //check for collision
-      if (platform.collide(this.instances[i].pos, utils.scaleVector(this.instances[i].size, 2/3), this.instances[i].speed, this.instances[i].shape)) {
+      if (platform.collide(this.instances[i].pos, utils.scaleVector(this.instances[i].size, this.instances[i].hitbox.ratio), this.instances[i].speed, this.instances[i].hitbox.shape)) {
         this.instances.splice(i, 1);
       }
     }
