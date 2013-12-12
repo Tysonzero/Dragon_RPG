@@ -24,7 +24,10 @@ var dragon = {
   },
   
   //dragon shape
-  shape:"rect",
+  hitbox:{
+    ratio:1,
+    shape:"rect",
+  },
   
   //dragon image
   image:new Image(),
@@ -55,7 +58,7 @@ var dragon = {
     this.pos.y += this.speed.y;
     
     //check for collision
-    platform.collide(this.pos, this.size, this.speed, this.shape);
+    platform.collide(this.pos, utils.scaleVector(this.size, this.hitbox.ratio), this.speed, this.hitbox.shape);
   },
   
   //drawing to screen
@@ -100,7 +103,7 @@ var dragon = {
         y:mouseInput.pos.y - this.pos.y + 5,
       };
       var distance = Math.pow(Math.pow(offset.x, 2) + Math.pow(offset.y, 2), 0.5);
-      projectile.create(this.pos.x + 50 * this.direction.x, this.pos.y - 5, 30, 30, 5 * offset.x / distance, 5 * offset.y / distance, "rect");
+      projectile.create(this.pos.x + 50 * this.direction.x, this.pos.y - 5, 30, 30, 5 * offset.x / distance, 5 * offset.y / distance, {ratio:2/3, shape:"rect"});
     }
   },
 };
