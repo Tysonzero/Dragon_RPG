@@ -60,7 +60,27 @@ var platform = {
           }
           break;
         case "circle":
-          //INSERT CIRCLE COLLISION CODE HERE
+          if (pos.y > this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y < this.instances[i].pos.y + this.instances[i].size.y/2) {
+            if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
+              collision.right = Math.max((pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2), collision.right);
+              collision.any = true;
+            }
+            if (pos.x - size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2 && pos.x - size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2) {
+              collision.left = Math.max((this.instances[i].pos.x + this.instances[i].size.x/2) - (pos.x - size.x/2), collision.left);
+              collision.any = true;
+            }
+          }
+          if (pos.x > this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x < this.instances[i].pos.x + this.instances[i].size.x/2) {
+            if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
+              collision.bottom = Math.max((pos.y + size.y/2) - (this.instances[i].pos.y - this.instances[i].size.y/2), collision.bottom);
+              collision.any = true;
+            }
+            if (pos.y - size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2 && pos.y - size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2) {
+              collision.top = Math.max((this.instances[i].pos.y + this.instances[i].size.y/2) - (pos.y - size.y/2), collision.top);
+              collision.any = true;
+            }
+          }
+          //FINISH CIRCLE COLLISION
           break;
       }
     }
