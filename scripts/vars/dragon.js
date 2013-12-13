@@ -103,7 +103,7 @@ var dragon = {
         y:mouseInput.pos.y - this.pos.y + 5,
       };
       var distance = Math.pow(Math.pow(offset.x, 2) + Math.pow(offset.y, 2), 0.5);
-      projectile.create(this.pos.x + 50 * this.direction.x, this.pos.y - 5, 30, 30, 5 * offset.x / distance, 5 * offset.y / distance, {ratio:2/3, shape:"rect"});
+      projectile.create(this.pos.x + 50 * this.direction.x, this.pos.y - 5, 30, 30, 5 * offset.x / distance, 5 * offset.y / distance, {ratio:2/3, shape:"circle"});
     }
   },
 };
