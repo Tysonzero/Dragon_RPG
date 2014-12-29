@@ -1,18 +1,18 @@
 var projectile = {
-	//array of Projectile objects
-	instances:[],
+  //array of Projectile objects
+  instances:[],
 
   //projectile image
   image:new Image(),
   
-	//Projectile prototype
-	Projectile:function(pos, size, speed, hitbox) {
-		//objects with x and y attributes
-		this.pos = pos;
-		this.size = size;
-		this.speed = speed;
+  //Projectile prototype
+  Projectile:function(pos, size, speed, hitbox) {
+    //objects with x and y attributes
+    this.pos = pos;
+    this.size = size;
+    this.speed = speed;
     this.hitbox = hitbox;
-	},
+  },
   
   //creates a new projectile
   create:function(posX, posY, sizeX, sizeY, speedX, speedY, shape) {

@@ -3,11 +3,11 @@ var platform = {
   instances:[],
 
   //Platform prototype
-	Platform:function(pos, size) {
+  Platform:function(pos, size) {
     //objects with x and y attributes
-		this.pos = pos;
-		this.size = size;
-	},
+    this.pos = pos;
+    this.size = size;
+  },
   
   //creates a new platform
   create:function(posX, posY, sizeX, sizeY) {
