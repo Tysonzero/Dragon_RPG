@@ -18,7 +18,7 @@ var platform = {
   draw:function() {
     for (var i = 0; i < this.instances.length; i++) {
       output = camera.output(this.instances[i].pos, this.instances[i].size);
-      game.ctx.fillStyle="#000000";
+      game.ctx.fillStyle = "#000000";
       game.ctx.fillRect(output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
     }
   },
