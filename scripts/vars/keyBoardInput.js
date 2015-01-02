@@ -1,9 +1,9 @@
 var keyBoardInput = {
   //array storing what keys are held down
-  key:[],
+  key: [],
   
   //array storing what keys were previously held down
-  lastKey:[],
+  lastKey: [],
 
   //creates keyboard listener
   initialize: function() {

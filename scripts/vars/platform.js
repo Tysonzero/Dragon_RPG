@@ -1,6 +1,6 @@
 var platform = {
   //array of Platform objects
-  instances:[],
+  instances: [],
 
   //Platform prototype
   Platform: function(pos, size) {
