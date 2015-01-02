@@ -6,12 +6,12 @@ var keyBoardInput = {
   lastKey:[],
 
   //creates keyboard listener
-  initialize:function() {
+  initialize: function() {
     this._bind_keys();
   },
 
   //sets up keyboard listener
-  _bind_keys:function() {
+  _bind_keys: function() {
     //called whenever a key is pressed
     window.onkeydown = function(e) {
       keyBoardInput.key[e.keyCode] = true;
@@ -24,7 +24,7 @@ var keyBoardInput = {
   },
   
   //variable manipulation
-  update:function() {
+  update: function() {
     this.lastKey = this.key.slice();
   },
 };
