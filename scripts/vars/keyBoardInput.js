@@ -1,7 +1,7 @@
 var keyBoardInput = {
     //array storing what keys are held down
     key: [],
-    
+
     //array storing what keys were previously held down
     lastKey: [],
 
@@ -16,13 +16,13 @@ var keyBoardInput = {
         window.onkeydown = function(e) {
             keyBoardInput.key[e.keyCode] = true;
         };
-        
+
         //called whenever a key is released
         window.onkeyup = function(e) {
             keyBoardInput.key[e.keyCode] = false;
         };
     },
-    
+
     //variable manipulation
     update: function() {
         this.lastKey = this.key.slice();

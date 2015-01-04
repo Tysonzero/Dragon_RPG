@@ -7,13 +7,13 @@ var camera = {
         x: 0,
         y: 0,
     },
-    
+
     //camera view area
     size: {
         x: 1000,
         y: 700,
     },
-    
+
     //variable manipulation
     update: function() {
         switch(this.view) {
@@ -23,7 +23,7 @@ var camera = {
                 break;
         }
     },
-    
+
     //convert true position to position on screen
     output: function(pos, size) {
         return {
@@ -37,7 +37,7 @@ var camera = {
             },
         };
     },
-    
+
     //convert position on screen to true position
     input: function(pos, size) {
         return {

@@ -8,12 +8,12 @@ var platform = {
         this.pos = pos;
         this.size = size;
     },
-    
+
     //creates a new platform
     create: function(posX, posY, sizeX, sizeY) {
         this.instances[this.instances.length] = new this.Platform({x: posX, y: posY}, {x: sizeX, y: sizeY});
     },
-    
+
     //drawing to screen
     draw: function() {
         for (var i = 0; i < this.instances.length; i++) {
@@ -22,7 +22,7 @@ var platform = {
             game.ctx.fillRect(output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
         }
     },
-    
+
     //adjust object if a collision occurs
     collide: function(pos, size, speed, shape) {
         //object containing depth of object collision
@@ -33,7 +33,7 @@ var platform = {
             bottom: 0,
             any: false,
         };
-        
+
         //check if object collides with any platform
         for (var i = 0; i < this.instances.length; i++) {
             switch(shape) {
@@ -102,10 +102,10 @@ var platform = {
             pos.y -= collision.bottom;
             speed.y = 0;
         }
-        
+
         return collision.any;
     },
-    
+
     //check if object is standing on a platform
     standing: function(pos, size) {
         for (i = 0; i < this.instances.length; i++) {

@@ -10,7 +10,7 @@ require(
         "vars/projectile",
         "vars/utils",
     ],
-    
+
     //runs once files are imported
     function() {
         game.setup();
