@@ -10,7 +10,7 @@ var game = {
     },
 
     //initial set up
-    setup: function() {
+    setup: function () {
         //get canvas created in html so it can be accessed
         this.canvas = document.getElementById('game_canvas');
 
@@ -32,7 +32,7 @@ var game = {
 
         //calls run() every 1/60th of a second
         this.timer = setInterval(
-            function() {
+            function () {
                 game.run();
             },
             16 + 2/3
@@ -40,13 +40,13 @@ var game = {
     },
 
     //run every 1/60th of a second
-    run: function() {
+    run: function () {
         this.update();
         this.draw();
     },
 
     //variable manipulation
-    update: function() {
+    update: function () {
         //update objects
         dragon.update();
         projectile.update();
@@ -55,7 +55,7 @@ var game = {
     },
 
     //drawing to screen
-    draw: function() {
+    draw: function () {
         //clear screen
         this.ctx.clearRect(0, 0, game.size.x, game.size.y);
 

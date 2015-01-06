@@ -15,7 +15,7 @@ var camera = {
     },
 
     //variable manipulation
-    update: function() {
+    update: function () {
         switch(this.view) {
             case "dragon":
                 this.pos.x = dragon.pos.x;
@@ -25,7 +25,7 @@ var camera = {
     },
 
     //convert true position to position on screen
-    output: function(pos, size) {
+    output: function (pos, size) {
         return {
             pos: {
                 x: ((pos.x - this.pos.x) * game.size.x / this.size.x) + game.size.x/2,
@@ -39,7 +39,7 @@ var camera = {
     },
 
     //convert position on screen to true position
-    input: function(pos, size) {
+    input: function (pos, size) {
         return {
             pos: {
                 x: ((pos.x - game.size.x/2) * this.size.x / game.size.x) + this.pos.x,

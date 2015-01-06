@@ -19,31 +19,31 @@ var mouseInput = {
     pressed: false,
 
     //creates mouse listener
-    initialize: function() {
+    initialize: function () {
         game.canvas.addEventListener('mousemove', this.mouseMove, false);
         game.canvas.addEventListener('mousedown', this.mouseDown, false);
         game.canvas.addEventListener('mouseup', this.mouseUp, false);
     },
 
     //called when mouse is moved
-    mouseMove: function(evt) {
+    mouseMove: function (evt) {
         mouseInput.pos = mouseInput.getMousePos(evt);
     },
 
     //called when mouse is clicked
-    mouseDown: function(evt) {
+    mouseDown: function (evt) {
         mouseInput.pos = mouseInput.getMousePos(evt);
         mouseInput.pressed = true;
     },
 
     //called when mouse is released
-    mouseUp: function(evt) {
+    mouseUp: function (evt) {
         mouseInput.pos = mouseInput.getMousePos(evt);
         mouseInput.pressed = false;
     },
 
     //returns mouse position within canvas
-    getMousePos: function(evt) {
+    getMousePos: function (evt) {
         var rect = game.canvas.getBoundingClientRect();
         return {x: evt.clientX - rect.left, y: evt.clientY - rect.top};
     },

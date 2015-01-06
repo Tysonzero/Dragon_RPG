@@ -6,7 +6,7 @@ var projectile = {
     image: new Image(),
 
     //Projectile prototype
-    Projectile: function(pos, size, speed, hitbox) {
+    Projectile: function (pos, size, speed, hitbox) {
         //objects with x and y attributes
         this.pos = pos;
         this.size = size;
@@ -15,17 +15,17 @@ var projectile = {
     },
 
     //creates a new projectile
-    create: function(posX, posY, sizeX, sizeY, speedX, speedY, shape) {
+    create: function (posX, posY, sizeX, sizeY, speedX, speedY, shape) {
         this.instances[this.instances.length] = new this.Projectile({x: posX, y: posY}, {x: sizeX, y: sizeY}, {x: speedX, y: speedY}, shape);
     },
 
     //initial set up
-    setup: function() {
+    setup: function () {
         this.image.src = "images/projectile.png";
     },
 
     //variable manipulation
-    update: function() {
+    update: function () {
         for (var i = 0; i < this.instances.length; i++) {
             //move objects by speed
             this.instances[i].pos.x += this.instances[i].speed.x;
@@ -39,7 +39,7 @@ var projectile = {
     },
 
     //drawing to screen
-    draw: function() {
+    draw: function () {
         for (var i = 0; i < this.instances.length; i++) {
             output = camera.output(this.instances[i].pos, this.instances[i].size);
             game.ctx.drawImage(this.image, 0, 60, 30, 30, output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);

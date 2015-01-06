@@ -33,12 +33,12 @@ var dragon = {
     image: new Image(),
 
     //initial set up
-    setup: function() {
+    setup: function () {
         this.image.src = "images/dragon.png";
     },
 
     //variable manipulation
-    update: function() {
+    update: function () {
         //calls run function
         this.run();
 
@@ -62,13 +62,13 @@ var dragon = {
     },
 
     //drawing to screen
-    draw: function() {
+    draw: function () {
         output = camera.output(this.pos, this.size);
         game.ctx.drawImage(this.image, 50 + (50*this.direction.x), 0, 100, 60, output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
     },
 
     //run left and right
-    run: function() {
+    run: function () {
         if (keyBoardInput.key[65] && !keyBoardInput.key[68]) {
             this.speed.x = -2;
             this.direction.x = -1;
@@ -83,19 +83,19 @@ var dragon = {
     },
 
     //jump upwards
-    jump: function() {
+    jump: function () {
         if (keyBoardInput.key[87] && !keyBoardInput.lastKey[87]) {
             this.speed.y = -5;
         }
     },
 
     //fall downwards
-    gravity: function() {
+    gravity: function () {
         this.speed.y += 0.1;
     },
 
     //use abilities
-    ability: function() {
+    ability: function () {
         //launch projectile if mouse is pressed
         if (mouseInput.pressed) {
             var offset = {

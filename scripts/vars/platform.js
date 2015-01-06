@@ -3,19 +3,19 @@ var platform = {
     instances: [],
 
     //Platform prototype
-    Platform: function(pos, size) {
+    Platform: function (pos, size) {
         //objects with x and y attributes
         this.pos = pos;
         this.size = size;
     },
 
     //creates a new platform
-    create: function(posX, posY, sizeX, sizeY) {
+    create: function (posX, posY, sizeX, sizeY) {
         this.instances[this.instances.length] = new this.Platform({x: posX, y: posY}, {x: sizeX, y: sizeY});
     },
 
     //drawing to screen
-    draw: function() {
+    draw: function () {
         for (var i = 0; i < this.instances.length; i++) {
             output = camera.output(this.instances[i].pos, this.instances[i].size);
             game.ctx.fillStyle = "#000000";
@@ -24,7 +24,7 @@ var platform = {
     },
 
     //adjust object if a collision occurs
-    collide: function(pos, size, speed, shape) {
+    collide: function (pos, size, speed, shape) {
         //object containing depth of object collision
         var collision = {
             left: 0,
@@ -107,7 +107,7 @@ var platform = {
     },
 
     //check if object is standing on a platform
-    standing: function(pos, size) {
+    standing: function (pos, size) {
         for (i = 0; i < this.instances.length; i++) {
             if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + 10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - 10) {
                 if (pos.y + size.y/2 == this.instances[i].pos.y - this.instances[i].size.y/2) {

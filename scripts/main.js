@@ -12,7 +12,7 @@ require(
     ],
 
     //runs once files are imported
-    function() {
+    function () {
         game.setup();
     }
 );
