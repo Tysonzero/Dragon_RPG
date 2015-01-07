@@ -16,11 +16,11 @@ var camera = {
 
     //variable manipulation
     update: function () {
-        switch(this.view) {
-            case "dragon":
-                this.pos.x = dragon.pos.x;
-                this.pos.y = dragon.pos.y;
-                break;
+        switch (this.view) {
+        case "dragon":
+            this.pos.x = dragon.pos.x;
+            this.pos.y = dragon.pos.y;
+            break;
         }
     },
 

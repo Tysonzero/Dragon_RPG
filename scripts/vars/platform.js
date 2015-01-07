@@ -36,52 +36,52 @@ var platform = {
 
         //check if object collides with any platform
         for (var i = 0; i < this.instances.length; i++) {
-            switch(shape) {
-                case "rect":
-                    if (pos.y + size.y/2 > this.instances[i].pos.y - this.instances[i].size.y/2 + size.y/10 && pos.y - size.y/2 < this.instances[i].pos.y + this.instances[i].size.y/2 - size.y/10) {
-                        if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
-                            collision.right = Math.max((pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2), collision.right);
-                            collision.any = true;
-                        }
-                        if (pos.x - size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2 && pos.x - size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2) {
-                            collision.left = Math.max((this.instances[i].pos.x + this.instances[i].size.x/2) - (pos.x - size.x/2), collision.left);
-                            collision.any = true;
-                        }
+            switch (shape) {
+            case "rect":
+                if (pos.y + size.y/2 > this.instances[i].pos.y - this.instances[i].size.y/2 + size.y/10 && pos.y - size.y/2 < this.instances[i].pos.y + this.instances[i].size.y/2 - size.y/10) {
+                    if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
+                        collision.right = Math.max((pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2), collision.right);
+                        collision.any = true;
                     }
-                    if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + size.x/10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - size.x/10) {
-                        if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
-                            collision.bottom = Math.max((pos.y + size.y/2) - (this.instances[i].pos.y - this.instances[i].size.y/2), collision.bottom);
-                            collision.any = true;
-                        }
-                        if (pos.y - size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2 && pos.y - size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2) {
-                            collision.top = Math.max((this.instances[i].pos.y + this.instances[i].size.y/2) - (pos.y - size.y/2), collision.top);
-                            collision.any = true;
-                        }
+                    if (pos.x - size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2 && pos.x - size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2) {
+                        collision.left = Math.max((this.instances[i].pos.x + this.instances[i].size.x/2) - (pos.x - size.x/2), collision.left);
+                        collision.any = true;
                     }
-                    break;
-                case "circle":
-                    if (pos.y > this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y < this.instances[i].pos.y + this.instances[i].size.y/2) {
-                        if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
-                            collision.right = Math.max((pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2), collision.right);
-                            collision.any = true;
-                        }
-                        if (pos.x - size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2 && pos.x - size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2) {
-                            collision.left = Math.max((this.instances[i].pos.x + this.instances[i].size.x/2) - (pos.x - size.x/2), collision.left);
-                            collision.any = true;
-                        }
+                }
+                if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + size.x/10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - size.x/10) {
+                    if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
+                        collision.bottom = Math.max((pos.y + size.y/2) - (this.instances[i].pos.y - this.instances[i].size.y/2), collision.bottom);
+                        collision.any = true;
                     }
-                    if (pos.x > this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x < this.instances[i].pos.x + this.instances[i].size.x/2) {
-                        if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
-                            collision.bottom = Math.max((pos.y + size.y/2) - (this.instances[i].pos.y - this.instances[i].size.y/2), collision.bottom);
-                            collision.any = true;
-                        }
-                        if (pos.y - size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2 && pos.y - size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2) {
-                            collision.top = Math.max((this.instances[i].pos.y + this.instances[i].size.y/2) - (pos.y - size.y/2), collision.top);
-                            collision.any = true;
-                        }
+                    if (pos.y - size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2 && pos.y - size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2) {
+                        collision.top = Math.max((this.instances[i].pos.y + this.instances[i].size.y/2) - (pos.y - size.y/2), collision.top);
+                        collision.any = true;
                     }
-                    //FINISH CIRCLE COLLISION
-                    break;
+                }
+                break;
+            case "circle":
+                if (pos.y > this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y < this.instances[i].pos.y + this.instances[i].size.y/2) {
+                    if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
+                        collision.right = Math.max((pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2), collision.right);
+                        collision.any = true;
+                    }
+                    if (pos.x - size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2 && pos.x - size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2) {
+                        collision.left = Math.max((this.instances[i].pos.x + this.instances[i].size.x/2) - (pos.x - size.x/2), collision.left);
+                        collision.any = true;
+                    }
+                }
+                if (pos.x > this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x < this.instances[i].pos.x + this.instances[i].size.x/2) {
+                    if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
+                        collision.bottom = Math.max((pos.y + size.y/2) - (this.instances[i].pos.y - this.instances[i].size.y/2), collision.bottom);
+                        collision.any = true;
+                    }
+                    if (pos.y - size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2 && pos.y - size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2) {
+                        collision.top = Math.max((this.instances[i].pos.y + this.instances[i].size.y/2) - (pos.y - size.y/2), collision.top);
+                        collision.any = true;
+                    }
+                }
+                //FINISH CIRCLE COLLISION
+                break;
             }
         }
 
