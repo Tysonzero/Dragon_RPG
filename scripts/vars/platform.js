@@ -110,7 +110,7 @@ var platform = {
     standing: function (pos, size) {
         for (i = 0; i < this.instances.length; i++) {
             if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + 10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - 10) {
-                if (pos.y + size.y/2 == this.instances[i].pos.y - this.instances[i].size.y/2) {
+                if (pos.y + size.y/2 === this.instances[i].pos.y - this.instances[i].size.y/2) {
                     return true;
                 }
             }
