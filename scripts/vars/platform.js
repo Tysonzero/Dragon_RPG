@@ -89,16 +89,14 @@ var platform = {
         if (collision.left && !collision.right) {
             pos.x += collision.left;
             speed.x = 0;
-        }
-        else if (collision.right && !collision.left) {
+        } else if (collision.right && !collision.left) {
             pos.x -= collision.right;
             speed.x = 0;
         }
         if (collision.top && !collision.bottom) {
             pos.y += collision.top;
             speed.y = 0;
-        }
-        else if (collision.bottom && !collision.top) {
+        } else if (collision.bottom && !collision.top) {
             pos.y -= collision.bottom;
             speed.y = 0;
         }

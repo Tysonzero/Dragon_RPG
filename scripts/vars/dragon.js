@@ -72,12 +72,10 @@ var dragon = {
         if (keyBoardInput.key[65] && !keyBoardInput.key[68]) {
             this.speed.x = -2;
             this.direction.x = -1;
-        }
-        else if (keyBoardInput.key[68] && !keyBoardInput.key[65]) {
+        } else if (keyBoardInput.key[68] && !keyBoardInput.key[65]) {
             this.speed.x = 2;
             this.direction.x = 1;
-        }
-        else {
+        } else {
             this.speed.x = 0;
         }
     },
