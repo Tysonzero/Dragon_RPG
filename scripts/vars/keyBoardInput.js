@@ -26,5 +26,5 @@ var keyBoardInput = {
     //variable manipulation
     update: function () {
         this.lastKey = this.key.slice();
-    },
+    }
 };

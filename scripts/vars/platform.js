@@ -31,7 +31,7 @@ var platform = {
             right: 0,
             top: 0,
             bottom: 0,
-            any: false,
+            any: false
         };
 
         //check if object collides with any platform
@@ -113,5 +113,5 @@ var platform = {
                 }
             }
         }
-    },
+    }
 };

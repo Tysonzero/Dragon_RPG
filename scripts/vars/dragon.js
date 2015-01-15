@@ -2,31 +2,31 @@ var dragon = {
     //dragon direction
     direction: {
         x: 1,
-        y: 0,
+        y: 0
     },
 
     //dragon position
     pos: {
         x: 0,
-        y: 0,
+        y: 0
     },
 
     //dragon velocity
     speed: {
         x: 0,
-        y: 0,
+        y: 0
     },
 
     //dragon size
     size: {
         x: 100,
-        y: 60,
+        y: 60
     },
 
     //dragon shape
     hitbox: {
         ratio: 1,
-        shape: "rect",
+        shape: "rect"
     },
 
     //dragon image
@@ -98,10 +98,10 @@ var dragon = {
         if (mouseInput.pressed) {
             var offset = {
                 x: mouseInput.pos.x - this.pos.x - 50 * this.direction.x,
-                y: mouseInput.pos.y - this.pos.y + 5,
+                y: mouseInput.pos.y - this.pos.y + 5
             };
             var distance = Math.pow(Math.pow(offset.x, 2) + Math.pow(offset.y, 2), 0.5);
             projectile.create(this.pos.x + 50 * this.direction.x, this.pos.y - 5, 30, 30, 5 * offset.x / distance, 5 * offset.y / distance, {ratio: 2/3, shape: "circle"});
         }
-    },
+    }
 };

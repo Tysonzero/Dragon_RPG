@@ -5,13 +5,13 @@ var camera = {
     //camera position
     pos: {
         x: 0,
-        y: 0,
+        y: 0
     },
 
     //camera view area
     size: {
         x: 1000,
-        y: 700,
+        y: 700
     },
 
     //variable manipulation
@@ -29,12 +29,12 @@ var camera = {
         return {
             pos: {
                 x: ((pos.x - this.pos.x) * game.size.x / this.size.x) + game.size.x/2,
-                y: ((pos.y - this.pos.y) * game.size.y / this.size.y) + game.size.y/2,
+                y: ((pos.y - this.pos.y) * game.size.y / this.size.y) + game.size.y/2
             },
             size: {
                 x: size.x * game.size.x / this.size.x,
-                y: size.y * game.size.y / this.size.y,
-            },
+                y: size.y * game.size.y / this.size.y
+            }
         };
     },
 
@@ -43,12 +43,12 @@ var camera = {
         return {
             pos: {
                 x: ((pos.x - game.size.x/2) * this.size.x / game.size.x) + this.pos.x,
-                y: ((pos.y - game.size.y/2) * this.size.y / game.size.y) + this.pos.y,
+                y: ((pos.y - game.size.y/2) * this.size.y / game.size.y) + this.pos.y
             },
             size: {
                 x: size.x * this.size.x / game.size.x,
-                y: size.y * this.size.y / game.size.y,
-            },
+                y: size.y * this.size.y / game.size.y
+            }
         };
-    },
+    }
 };

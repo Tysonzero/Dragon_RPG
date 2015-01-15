@@ -6,7 +6,7 @@ var game = {
     //use dimensions identical to size of enclosing <div>
     size: {
         x: 1000,
-        y: 700,
+        y: 700
     },
 
     //initial set up
@@ -63,5 +63,5 @@ var game = {
         dragon.draw();
         projectile.draw();
         platform.draw();
-    },
+    }
 };
