@@ -19,7 +19,7 @@ var platform = {
         for (var i = 0; i < this.instances.length; i++) {
             output = camera.output(this.instances[i].pos, this.instances[i].size);
             game.ctx.fillStyle = "#000000";
-            game.ctx.fillRect(output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
+            game.ctx.fillRect(output.pos.x - output.size.x / 2, output.pos.y - output.size.y / 2, output.size.x, output.size.y);
         }
     },
 
@@ -38,45 +38,45 @@ var platform = {
         for (var i = 0; i < this.instances.length; i++) {
             switch (shape) {
             case "rect":
-                if (pos.y + size.y/2 > this.instances[i].pos.y - this.instances[i].size.y/2 + size.y/10 && pos.y - size.y/2 < this.instances[i].pos.y + this.instances[i].size.y/2 - size.y/10) {
-                    if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
-                        collision.right = Math.max((pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2), collision.right);
+                if (pos.y + size.y / 2 > this.instances[i].pos.y - this.instances[i].size.y / 2 + size.y / 10 && pos.y - size.y / 2 < this.instances[i].pos.y + this.instances[i].size.y / 2 - size.y / 10) {
+                    if (pos.x + size.x / 2 >= this.instances[i].pos.x - this.instances[i].size.x / 2 && pos.x + size.x / 2 <= this.instances[i].pos.x + this.instances[i].size.x / 2) {
+                        collision.right = Math.max((pos.x + size.x / 2) - (this.instances[i].pos.x - this.instances[i].size.x / 2), collision.right);
                         collision.any = true;
                     }
-                    if (pos.x - size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2 && pos.x - size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2) {
-                        collision.left = Math.max((this.instances[i].pos.x + this.instances[i].size.x/2) - (pos.x - size.x/2), collision.left);
+                    if (pos.x - size.x / 2 <= this.instances[i].pos.x + this.instances[i].size.x / 2 && pos.x - size.x / 2 >= this.instances[i].pos.x - this.instances[i].size.x / 2) {
+                        collision.left = Math.max((this.instances[i].pos.x + this.instances[i].size.x / 2) - (pos.x - size.x / 2), collision.left);
                         collision.any = true;
                     }
                 }
-                if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + size.x/10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - size.x/10) {
-                    if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
-                        collision.bottom = Math.max((pos.y + size.y/2) - (this.instances[i].pos.y - this.instances[i].size.y/2), collision.bottom);
+                if (pos.x + size.x / 2 > this.instances[i].pos.x - this.instances[i].size.x / 2 + size.x / 10 && pos.x - size.x / 2 < this.instances[i].pos.x + this.instances[i].size.x / 2 - size.x / 10) {
+                    if (pos.y + size.y / 2 >= this.instances[i].pos.y - this.instances[i].size.y / 2 && pos.y + size.y / 2 <= this.instances[i].pos.y + this.instances[i].size.y / 2) {
+                        collision.bottom = Math.max((pos.y + size.y / 2) - (this.instances[i].pos.y - this.instances[i].size.y / 2), collision.bottom);
                         collision.any = true;
                     }
-                    if (pos.y - size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2 && pos.y - size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2) {
-                        collision.top = Math.max((this.instances[i].pos.y + this.instances[i].size.y/2) - (pos.y - size.y/2), collision.top);
+                    if (pos.y - size.y / 2 <= this.instances[i].pos.y + this.instances[i].size.y / 2 && pos.y - size.y / 2 >= this.instances[i].pos.y - this.instances[i].size.y / 2) {
+                        collision.top = Math.max((this.instances[i].pos.y + this.instances[i].size.y / 2) - (pos.y - size.y / 2), collision.top);
                         collision.any = true;
                     }
                 }
                 break;
             case "circle":
-                if (pos.y > this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y < this.instances[i].pos.y + this.instances[i].size.y/2) {
-                    if (pos.x + size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x + size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2) {
-                        collision.right = Math.max((pos.x + size.x/2) - (this.instances[i].pos.x - this.instances[i].size.x/2), collision.right);
+                if (pos.y > this.instances[i].pos.y - this.instances[i].size.y / 2 && pos.y < this.instances[i].pos.y + this.instances[i].size.y / 2) {
+                    if (pos.x + size.x / 2 >= this.instances[i].pos.x - this.instances[i].size.x / 2 && pos.x + size.x / 2 <= this.instances[i].pos.x + this.instances[i].size.x / 2) {
+                        collision.right = Math.max((pos.x + size.x / 2) - (this.instances[i].pos.x - this.instances[i].size.x / 2), collision.right);
                         collision.any = true;
                     }
-                    if (pos.x - size.x/2 <= this.instances[i].pos.x + this.instances[i].size.x/2 && pos.x - size.x/2 >= this.instances[i].pos.x - this.instances[i].size.x/2) {
-                        collision.left = Math.max((this.instances[i].pos.x + this.instances[i].size.x/2) - (pos.x - size.x/2), collision.left);
+                    if (pos.x - size.x / 2 <= this.instances[i].pos.x + this.instances[i].size.x / 2 && pos.x - size.x / 2 >= this.instances[i].pos.x - this.instances[i].size.x / 2) {
+                        collision.left = Math.max((this.instances[i].pos.x + this.instances[i].size.x / 2) - (pos.x - size.x / 2), collision.left);
                         collision.any = true;
                     }
                 }
-                if (pos.x > this.instances[i].pos.x - this.instances[i].size.x/2 && pos.x < this.instances[i].pos.x + this.instances[i].size.x/2) {
-                    if (pos.y + size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2 && pos.y + size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2) {
-                        collision.bottom = Math.max((pos.y + size.y/2) - (this.instances[i].pos.y - this.instances[i].size.y/2), collision.bottom);
+                if (pos.x > this.instances[i].pos.x - this.instances[i].size.x / 2 && pos.x < this.instances[i].pos.x + this.instances[i].size.x / 2) {
+                    if (pos.y + size.y / 2 >= this.instances[i].pos.y - this.instances[i].size.y / 2 && pos.y + size.y / 2 <= this.instances[i].pos.y + this.instances[i].size.y / 2) {
+                        collision.bottom = Math.max((pos.y + size.y / 2) - (this.instances[i].pos.y - this.instances[i].size.y / 2), collision.bottom);
                         collision.any = true;
                     }
-                    if (pos.y - size.y/2 <= this.instances[i].pos.y + this.instances[i].size.y/2 && pos.y - size.y/2 >= this.instances[i].pos.y - this.instances[i].size.y/2) {
-                        collision.top = Math.max((this.instances[i].pos.y + this.instances[i].size.y/2) - (pos.y - size.y/2), collision.top);
+                    if (pos.y - size.y / 2 <= this.instances[i].pos.y + this.instances[i].size.y / 2 && pos.y - size.y / 2 >= this.instances[i].pos.y - this.instances[i].size.y / 2) {
+                        collision.top = Math.max((this.instances[i].pos.y + this.instances[i].size.y / 2) - (pos.y - size.y / 2), collision.top);
                         collision.any = true;
                     }
                 }
@@ -107,8 +107,8 @@ var platform = {
     //check if object is standing on a platform
     standing: function (pos, size) {
         for (i = 0; i < this.instances.length; i++) {
-            if (pos.x + size.x/2 > this.instances[i].pos.x - this.instances[i].size.x/2 + 10 && pos.x - size.x/2 < this.instances[i].pos.x + this.instances[i].size.x/2 - 10) {
-                if (pos.y + size.y/2 === this.instances[i].pos.y - this.instances[i].size.y/2) {
+            if (pos.x + size.x / 2 > this.instances[i].pos.x - this.instances[i].size.x / 2 + 10 && pos.x - size.x / 2 < this.instances[i].pos.x + this.instances[i].size.x / 2 - 10) {
+                if (pos.y + size.y / 2 === this.instances[i].pos.y - this.instances[i].size.y / 2) {
                     return true;
                 }
             }

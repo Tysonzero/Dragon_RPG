@@ -28,8 +28,8 @@ var camera = {
     output: function (pos, size) {
         return {
             pos: {
-                x: ((pos.x - this.pos.x) * game.size.x / this.size.x) + game.size.x/2,
-                y: ((pos.y - this.pos.y) * game.size.y / this.size.y) + game.size.y/2
+                x: ((pos.x - this.pos.x) * game.size.x / this.size.x) + game.size.x / 2,
+                y: ((pos.y - this.pos.y) * game.size.y / this.size.y) + game.size.y / 2
             },
             size: {
                 x: size.x * game.size.x / this.size.x,
@@ -42,8 +42,8 @@ var camera = {
     input: function (pos, size) {
         return {
             pos: {
-                x: ((pos.x - game.size.x/2) * this.size.x / game.size.x) + this.pos.x,
-                y: ((pos.y - game.size.y/2) * this.size.y / game.size.y) + this.pos.y
+                x: ((pos.x - game.size.x / 2) * this.size.x / game.size.x) + this.pos.x,
+                y: ((pos.y - game.size.y / 2) * this.size.y / game.size.y) + this.pos.y
             },
             size: {
                 x: size.x * this.size.x / game.size.x,

@@ -42,7 +42,7 @@ var projectile = {
     draw: function () {
         for (var i = 0; i < this.instances.length; i++) {
             output = camera.output(this.instances[i].pos, this.instances[i].size);
-            game.ctx.drawImage(this.image, 0, 60, 30, 30, output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
+            game.ctx.drawImage(this.image, 0, 60, 30, 30, output.pos.x - output.size.x / 2, output.pos.y - output.size.y / 2, output.size.x, output.size.y);
         }
     }
 };

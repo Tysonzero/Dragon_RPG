@@ -64,7 +64,7 @@ var dragon = {
     //drawing to screen
     draw: function () {
         output = camera.output(this.pos, this.size);
-        game.ctx.drawImage(this.image, 50 + (50 * this.direction.x), 0, 100, 60, output.pos.x - output.size.x/2, output.pos.y - output.size.y/2, output.size.x, output.size.y);
+        game.ctx.drawImage(this.image, 50 + (50 * this.direction.x), 0, 100, 60, output.pos.x - output.size.x / 2, output.pos.y - output.size.y / 2, output.size.x, output.size.y);
     },
 
     //run left and right
@@ -101,7 +101,7 @@ var dragon = {
                 y: mouseInput.pos.y - this.pos.y + 5
             };
             var distance = Math.pow(Math.pow(offset.x, 2) + Math.pow(offset.y, 2), 0.5);
-            projectile.create(this.pos.x + 50 * this.direction.x, this.pos.y - 5, 30, 30, 5 * offset.x / distance, 5 * offset.y / distance, {ratio: 2/3, shape: "circle"});
+            projectile.create(this.pos.x + 50 * this.direction.x, this.pos.y - 5, 30, 30, 5 * offset.x / distance, 5 * offset.y / distance, {ratio: 2 / 3, shape: "circle"});
         }
     }
 };
