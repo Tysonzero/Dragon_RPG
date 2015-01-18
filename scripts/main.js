@@ -8,7 +8,7 @@ require(
         "vars/mouseInput",
         "vars/platform",
         "vars/projectile",
-        "vars/utils",
+        "vars/utils"
     ],
 
     //runs once files are imported
