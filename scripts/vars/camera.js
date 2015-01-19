@@ -1,6 +1,6 @@
 var camera = {
     //camera view
-    view: "dragon",
+    view: 'dragon',
 
     //camera position
     pos: {
@@ -17,7 +17,7 @@ var camera = {
     //variable manipulation
     update: function () {
         switch (this.view) {
-        case "dragon":
+        case 'dragon':
             this.pos.x = dragon.pos.x;
             this.pos.y = dragon.pos.y;
             break;

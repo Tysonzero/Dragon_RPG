@@ -21,7 +21,7 @@ var projectile = {
 
     //initial set up
     setup: function () {
-        this.image.src = "images/projectile.png";
+        this.image.src = 'images/projectile.png';
     },
 
     //variable manipulation

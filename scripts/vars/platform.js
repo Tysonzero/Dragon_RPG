@@ -18,7 +18,7 @@ var platform = {
     draw: function () {
         for (var i = 0; i < this.instances.length; i++) {
             output = camera.output(this.instances[i].pos, this.instances[i].size);
-            game.ctx.fillStyle = "#000000";
+            game.ctx.fillStyle = '#000000';
             game.ctx.fillRect(output.pos.x - output.size.x / 2, output.pos.y - output.size.y / 2, output.size.x, output.size.y);
         }
     },
@@ -37,7 +37,7 @@ var platform = {
         //check if object collides with any platform
         for (var i = 0; i < this.instances.length; i++) {
             switch (shape) {
-            case "rect":
+            case 'rect':
                 if (pos.y + size.y / 2 > this.instances[i].pos.y - this.instances[i].size.y / 2 + size.y / 10 && pos.y - size.y / 2 < this.instances[i].pos.y + this.instances[i].size.y / 2 - size.y / 10) {
                     if (pos.x + size.x / 2 >= this.instances[i].pos.x - this.instances[i].size.x / 2 && pos.x + size.x / 2 <= this.instances[i].pos.x + this.instances[i].size.x / 2) {
                         collision.right = Math.max((pos.x + size.x / 2) - (this.instances[i].pos.x - this.instances[i].size.x / 2), collision.right);
@@ -59,7 +59,7 @@ var platform = {
                     }
                 }
                 break;
-            case "circle":
+            case 'circle':
                 if (pos.y > this.instances[i].pos.y - this.instances[i].size.y / 2 && pos.y < this.instances[i].pos.y + this.instances[i].size.y / 2) {
                     if (pos.x + size.x / 2 >= this.instances[i].pos.x - this.instances[i].size.x / 2 && pos.x + size.x / 2 <= this.instances[i].pos.x + this.instances[i].size.x / 2) {
                         collision.right = Math.max((pos.x + size.x / 2) - (this.instances[i].pos.x - this.instances[i].size.x / 2), collision.right);
